@@ -1,5 +1,11 @@
 # moviesDB
 
+MoviesDB an online database of information related to films, home videos, series – including cast, personal biographies, plot summaries, trivia, ratings.
+
+
+[Visit MoviesDB >>](https://sharp-curie-57385e.netlify.app/)
+
+
 ## react-devs GROUP GUIDLINES :
 
 ### Team members:

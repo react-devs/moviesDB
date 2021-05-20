@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# moviesDB
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## react-devs GROUP GUIDLINES :
 
-## Available Scripts
+### Team members:
 
-In the project directory, you can run:
+* Ahmad Ammoura
+* Abdulrahman Abughniem
+* Abeer Al-Rafati
+* Sufian Hamdan
+* Sukina Abu-Hammad
 
-### `npm start`
+### Communication Plan:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Days of commnicate : every day.
+* Time to commnicate : any time during the day between (9am - 9pm).
+* Metting time: there is a meeting everyday at (6pm) to show updates.
+* We chose GitHub Projects to manage our work
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* The daily meeting for assess all the tasks had done, and decide which need managing and which will merge to the main file. Everything shoulden’t merge to the main branch out of the meeting.
 
-### `npm test`
+### Conflict Plan:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Team climate characterized by interpersonal trust and mutual respect in which people are comfortable being themselves.
 
-### `npm run build`
+* Making sure the team had clear goals and creating a culture of dependability.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* when the team gather, they norms typically override individual proclivities and encourage deference to the team.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* wrong norms could hobble a team, even if, individually, all the members were exceptionally bright.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* To maximize the group score was for each person to sacrifice an item he really wanted for something the team needed.
 
-### `npm run eject`
+* Any time you want to push your branch pull the main to be sure that all updated.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Work Plan:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Tasks will be written and distributed in a fair way and managed by using a project management tool that is structured and specific.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* Each member of the team should to raise his work at least three times during the day.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* It is not accepted that something is merged in the main file before all team members agree on it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

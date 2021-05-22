@@ -1,5 +1,7 @@
 // import axios from 'axios';
 import React, { Component } from 'react';
+import NavBar from './NavBar'
+import { withAuth0 } from '@auth0/auth0-react';
 
 class WatchList extends Component {
   // constructor(props) {
@@ -47,6 +49,7 @@ class WatchList extends Component {
     // const moviesList = this.state.watchListMovies.map(movie => {
       return (
         <>
+          <NavBar/>
           <div className="movies__container">
             <div className="movie" style={{backgroundImage: `url(https://ae01.alicdn.com/kf/HTB1xKI9PFXXXXXAXVXXq6xXFXXXG/Dropship-The-Shawshank-Redemption-Nostalgia-classic-movie-kraft-paper-bar-poster-Retro-Poster-decorative-painting.jpg)` , width: '35rem', height: '35rem'}  }>
               <img className="card-img-top" src={'https://ae01.alicdn.com/kf/HTB1xKI9PFXXXXXAXVXXq6xXFXXXG/Dropship-The-Shawshank-Redemption-Nostalgia-classic-movie-kraft-paper-bar-poster-Retro-Poster-decorative-painting.jpg'} alt={'movie1'} style={{ width: '10rem' }} />
@@ -69,4 +72,4 @@ class WatchList extends Component {
     // });
   }
 }
-export default WatchList;
+export default withAuth0(WatchList);

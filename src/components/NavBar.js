@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { withAuth0 } from '@auth0/auth0-react';
-import LogoutButton from './auth0/LogOut'
+import LogoutButton from './auth0/LogOut';
+import { Link } from "react-router-dom";
+
 
 class NavBar extends Component {
   render() {
@@ -11,13 +13,13 @@ class NavBar extends Component {
             <a className="brand-logo">Movies Times</a>
             <ul className="right">
               <li>
-                <a href="/">Home</a>
+                <Link to="/home">Home</Link>
               </li>
               <li>
-                <a href="/watchlist">WatchList</a>
+                <Link to="/watchlist">WatchList</Link>
               </li>
               <li>
-                <a href="/about">About Us</a>
+                <Link to="/eee">About Us</Link>
               </li>
               <li>
                 <LogoutButton/>

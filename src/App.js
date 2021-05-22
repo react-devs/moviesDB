@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import MoviesContainer from './components/MoviesContainer'
-import requests from './API/requests'
+import requests from './API/requests';
 
 class App extends Component {
   render() {

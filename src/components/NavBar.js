@@ -19,7 +19,7 @@ class NavBar extends Component {
                 <Link to="/watchlist">WatchList</Link>
               </li>
               <li>
-                <Link to="/eee">About Us</Link>
+                <Link to="/aboutus">About Us</Link>
               </li>
               <li>
                 <LogoutButton/>

@@ -13,10 +13,10 @@ class Container extends Component {
           <NavBar />
           <div className="content">
           <Switch>
-            <Route path="/homepage">
+            <Route exact path="/">
               <Home fetchUrl={requests.fetchTopTvShows} />
             </Route>
-            <Route path="/watchlist">
+            <Route path="/watchlist" exact>
               <WatchList/>
             </Route>
           </Switch>

@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
-import MoviesContainer from './components/MoviesContainer'
-import requests from './API/requests';
+import Container from './components/Container'
 
 class App extends Component {
   render() {
 
-    console.log(requests.fetchTrending)
     return (
       <div>
-        <MoviesContainer fetchUrl={requests.fetchTrending} />
+        <Container/>
       </div>
     )
   }

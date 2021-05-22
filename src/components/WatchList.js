@@ -1,6 +1,6 @@
 // import axios from 'axios';
 import React, { Component } from 'react';
-import './WatchList.css';
+
 class WatchList extends Component {
   // constructor(props) {
   //   super(props);

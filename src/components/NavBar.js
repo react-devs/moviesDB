@@ -10,7 +10,7 @@ class NavBar extends Component {
       <>
         <nav className="nav-wrapper red darken-3">
           <div className="container">
-            <a className="brand-logo">Movies Times</a>
+            <p className="brand-logo">Movies Times</p>
             <ul className="right">
               <li>
                 <Link to="/home">Home</Link>

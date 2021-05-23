@@ -22,7 +22,7 @@ export class LandingPage extends Component {
           >
             <source src={backgroundVedio} type="video/mp4" />
           </video>
-          <div className="overlay"></div>
+          {/* <div className="overlay"></div> */}
           <div className="text">
             <h2>MovieDB</h2>
             <h3>The Open Movie Database</h3>

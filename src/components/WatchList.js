@@ -2,7 +2,8 @@
 import React, { Component } from 'react';
 import NavBar from './NavBar'
 import { withAuth0 } from '@auth0/auth0-react';
-
+import '../style/wishList.css';
+// import Img from '../img/a.jpg'
 class WatchList extends Component {
   // constructor(props) {
   //   super(props);
@@ -45,12 +46,15 @@ class WatchList extends Component {
   // }
 
   render() {
-    // const baseImgUrl = "https://image.tmdb.org/t/p/original";
+    const baseImgUrl = "https://image.tmdb.org/t/p/original";
+    const { poster_path, original_title, id, overview, popularity } = this.props.movie;
+
     // const moviesList = this.state.watchListMovies.map(movie => {
-      return (
-        <>
-          <NavBar/>
-          <div className="movies__container">
+    return (
+      <>
+        <NavBar />
+        {/* /////////////////////////// */}
+        {/* <div className="movies__container">
             <div className="movie" style={{backgroundImage: `url(https://ae01.alicdn.com/kf/HTB1xKI9PFXXXXXAXVXXq6xXFXXXG/Dropship-The-Shawshank-Redemption-Nostalgia-classic-movie-kraft-paper-bar-poster-Retro-Poster-decorative-painting.jpg)` , width: '35rem', height: '35rem'}  }>
               <img className="card-img-top" src={'https://ae01.alicdn.com/kf/HTB1xKI9PFXXXXXAXVXXq6xXFXXXG/Dropship-The-Shawshank-Redemption-Nostalgia-classic-movie-kraft-paper-bar-poster-Retro-Poster-decorative-painting.jpg'} alt={'movie1'} style={{ width: '10rem' }} />
               <div className="movie__infos">
@@ -66,10 +70,34 @@ class WatchList extends Component {
                 </div> 
               </div>
             </div>
+          </div> */}
+        {/* /////////////////////////////////////// */}
+
+
+        <h1 style={{ color: 'black', margin: '5rem' }}>Wish List</h1>
+
+
+        <div id="card_container" data-offset="2">
+          <div class="pg">
+            {/* <img src={Img} alt='' /> */}
           </div>
-        </>
-      );
-    // });
+          <div id="card">
+            <div class="shine"></div>
+            <div class="text-block">
+              <h1>Aquaman <small>(2018)</small></h1>
+              <h3>Action | Adventure</h3>
+              <p>
+                Arthur Curry learns that he is the heir to the underwater kingdom of Atlantis, and must step forward to lead his people and be a hero to the world.
+      </p>
+              <button onClick={() => { }}> Delete </button>
+            </div>
+          </div>
+        </div>
+
+
+
+      </>
+    );
   }
 }
 export default withAuth0(WatchList);

@@ -3,16 +3,19 @@ body{
     margin: 0%;
 }
 
-/* .imageBackground{
+.content{
+    position: relative;
+    top: 0;
+
+}
+.imageBackground{
     background-size: cover;
 }
 
-.container-fluid{
-}
 
 .image{
     height: 300px;
-} */
+}
 
 .clearFloats{
     clear: both;
@@ -38,7 +41,7 @@ body{
     position: absolute;
     top: 0;
     right: 0;
-    background: rgba(27, 18, 18, 0.932);
+    background: rgba(27, 18, 18, 0.3);
     padding-top: 80px;
 
 }

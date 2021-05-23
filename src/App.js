@@ -18,18 +18,18 @@ class App extends Component {
           <Router>
             <Switch>
               <Route exact path="/">
-                {!isAuthenticated ? <LandingPage /> : <Home fetchUrl={requests.fetchTopTvShows} /> }
+                {!isAuthenticated ? <LandingPage /> : <Home fetchUrl={requests.fetchActionMovies} /> }
               </Route>
             </Switch>
             <Switch>
               <Route exact path="/home">
-                <Home fetchUrl={requests.fetchTopTvShows} />
+              {isAuthenticated && <Home fetchUrl={requests.fetchActionMovies} /> }
               </Route>
               <Route exact path="/watchlist">
-                <WatchList />
+                {isAuthenticated && <WatchList /> }
               </Route>
-              <Route exact path="/movie/:id" component={MovieProfile} />
-              <Route exact path="/aboutus" component={AboutUs} />
+              <Route exact path="/movie/:id" component={isAuthenticated && MovieProfile} />
+              <Route exact path="/aboutus" component={isAuthenticated && AboutUs} />
             </Switch>
           </Router>
         </>

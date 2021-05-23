@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import axios from '../API/axios'
-import './ActorsProfile.css';
+// import axios from '../API/axios'
+import '../style/ActorProfile.css';
 
 export class ActorsProfile extends Component {
 

@@ -17,7 +17,7 @@ class MovieProfile extends Component {
     // get the data here
     const detailsUrl = `/movie/${this.props.match.params.id}?api_key=${process.env.REACT_APP_MOVIES_DB_KEY}&language=en-US`;
 
-    const actorUrl = `/movie/${this.props.match.params.id}/credits?api_key=${process.env.REACT_APP_MOVIES_DB_KEY}&language=en-US`;
+    const actorUrl = `/movie/${this.props.match.params.id}/credits?api_key=${process.env.REACT_APP_MOVIES_DB_KEY}&append_to_response=person_id`;
 
 
     const movieIdresponse = await axios.get(detailsUrl);
@@ -25,7 +25,7 @@ class MovieProfile extends Component {
     const creditResponse = await axios.get(actorUrl);
 
     console.log(movieIdresponse.data.id);
-    console.log(creditResponse.data.cast);
+    console.log('new link',creditResponse);
 
     this.setState({
       actors: creditResponse.data.cast
@@ -37,11 +37,12 @@ class MovieProfile extends Component {
 
   render() {
     // const baseUrl = 'https://www.youtube.com/watch?v='
-    const actor = this.state.actors.map((actor, index) => {
+    const actor = this.state.actors.slice(0, 3).map((actor, index) => {
+  
       return (
         <>
-          <Link to={`/actor`}>
-            <p>Actors: {actor.name}</p>
+          <Link to={`/actor/${actor.id}`}>
+            <p key={index}>Actors: {actor.name}</p>
           </Link>
         </>
       )
@@ -52,7 +53,7 @@ class MovieProfile extends Component {
     return (
       <>
         <NavBar /> {/* <h1>movie id ={this.props.match.params.id}</h1> */}
-        <div className="cont">
+        {/* <div className="cont">
           
             <div className="backgroundImage" style={{
               backgroundImage: `url("https://image.tmdb.org/t/p/original/c0izdYdnTe4uMRifHgvTA85wPz0.jpg")`
@@ -60,14 +61,13 @@ class MovieProfile extends Component {
               <div className="overlay">
            heloo
 
-           <div>
-              {actor}
-           </div>
+          
             </div>
           </div>
-        </div>
-
-
+        </div> */}
+            <div>
+              {actor}
+            </div>
         
         {/* <div className="coverImage">
           

@@ -3,6 +3,7 @@ import axios from "../API/axios";
 import HeroBanner from "./HeroBanner";
 import Card from "./Card";
 import NavBar from "./NavBar";
+import '../style/home.css'
 
 
 class Home extends Component {

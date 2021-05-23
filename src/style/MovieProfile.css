@@ -1,0 +1,86 @@
+body{
+    padding: 0%;
+    margin: 0%;
+}
+
+/* .imageBackground{
+    background-size: cover;
+}
+
+.container-fluid{
+}
+
+.image{
+    height: 300px;
+} */
+
+.clearFloats{
+    clear: both;
+}
+
+
+.coverImage{
+    width: 100%;
+    height: 700px;
+    position: relative;
+   
+
+}
+
+.imageBackground{
+    width: 100%;
+    height: 700px;
+}
+
+.overlay{
+    width: 100%;
+    height: 700px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(27, 18, 18, 0.932);
+    padding-top: 80px;
+
+}
+
+.details{
+    width: 60%;
+    float: right;
+    color: ivory;
+    margin-right: 90px;
+}
+
+.MovieImage {
+    margin-left: 30px;
+}
+
+.image {
+    border-radius: 15px;
+    width:300px;
+}
+
+.ratingWatchlist h3 button{
+    display: inline-block;
+}
+
+.ratings {
+    display: inline;
+    margin-right: 20px;
+    padding: 5px;
+    background-color: rgb(71, 138, 5);
+}
+
+.watchlist {
+    padding: 5px;
+}
+
+
+.TrailerSection{
+    margin: 30px;
+}
+
+.trailerHeading{
+    border-bottom: 2px dashed black;
+    padding: 5px;
+    margin: 30px;
+}

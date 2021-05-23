@@ -23,14 +23,14 @@ class Home extends Component {
   };
 
   render() {
-    const moviesList = this.state.movies.map((movie,idx) => <Card key={idx} movie={movie} />);
+    const moviesList = this.state.movies.map((movie, idx) => <Card key={idx} movie={movie} />);
 
     return (
       <>
-        <NavBar/>
+        <NavBar />
         <HeroBanner />
         <div className="moviesListContainer" >
-        {moviesList}
+          {moviesList}
         </div>
       </>
     );

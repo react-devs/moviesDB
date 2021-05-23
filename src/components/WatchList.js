@@ -99,12 +99,12 @@ class WatchList extends Component {
 
 
         <div id="card_container" data-offset="2">
-          <div class="pg">
+          <div className="pg">
             {/* <img src={Img} alt='' /> */}
           </div>
           <div id="card" >
-            <div class="shine"></div>
-            <div class="text-block">
+            <div className="shine"></div>
+            <div className="text-block">
               <h1>Aquaman <small>(2018)</small></h1>
               <h3>Action | Adventure</h3>
               <p>

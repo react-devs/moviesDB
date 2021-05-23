@@ -17,7 +17,9 @@ class Home extends Component {
     console.log(fetchUrl);
 
     const response = await axios.get(fetchUrl);
+    
     console.log(response.data.results[0].id);
+
     this.setState({
       movies: response.data.results,
     });

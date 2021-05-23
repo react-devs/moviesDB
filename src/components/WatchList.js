@@ -1,4 +1,4 @@
-// import axios from 'axios';
+import axios from 'axios';
 import React, { Component } from 'react';
 import NavBar from './NavBar'
 import { withAuth0 } from '@auth0/auth0-react';
@@ -44,12 +44,33 @@ class WatchList extends Component {
   //   await axios.delete(`${this.state.server}/movies/${index}`, { params: query });
 
   // }
+  //////////////////////////////////////////
+  // state = {
+  //   movies: [],
+  // };
+
+  // componentDidMount = async () => {
+  //   const { fetchUrl } = this.props;
+
+  //   console.log(fetchUrl);
+
+  //   const response = await axios.get(fetchUrl);
+  //   // console.log(response.data.results[0].id);
+  //   this.setState({
+  //     movies: response.data.results,
+  //   });
+
+  //   // console.log(this.state.movies)
+  //   // console.log(response)
+
+  // };
 
   render() {
-    const baseImgUrl = "https://image.tmdb.org/t/p/original";
-    const { poster_path, original_title, id, overview, popularity } = this.props.movie;
-
+    // const baseImgUrl = "https://image.tmdb.org/t/p/original";
     // const moviesList = this.state.watchListMovies.map(movie => {
+
+
+    console.log(this.state.watchListMovies)
     return (
       <>
         <NavBar />
@@ -81,7 +102,7 @@ class WatchList extends Component {
           <div class="pg">
             {/* <img src={Img} alt='' /> */}
           </div>
-          <div id="card">
+          <div id="card" >
             <div class="shine"></div>
             <div class="text-block">
               <h1>Aquaman <small>(2018)</small></h1>

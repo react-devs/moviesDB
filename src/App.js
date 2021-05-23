@@ -7,11 +7,10 @@ import WatchList from './components/WatchList'
 import MovieProfile from './components/MovieProfile'
 import AboutUs from './components/AboutUs'
 import ActorsProfile from './components/Actorprofile'
-// import IsLoadingAndError from './IsLoadingAndError';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 class App extends Component {
   render() {
-    console.log(requests.fetchTrending);
+    // console.log(requests.fetchTrending);
     const { isAuthenticated } = this.props.auth0;
     return (
       <div>
@@ -19,15 +18,15 @@ class App extends Component {
           <Router>
             <Switch>
               <Route exact path="/">
-                {!isAuthenticated ? <LandingPage /> : <Home fetchUrl={requests.fetchActionMovies} /> }
+                {!isAuthenticated ? <LandingPage /> : <Home fetchUrl={requests.fetchActionMovies} />}
               </Route>
             </Switch>
             <Switch>
               <Route exact path="/home">
-              {isAuthenticated && <Home fetchUrl={requests.fetchActionMovies} /> }
+                {isAuthenticated && <Home fetchUrl={requests.fetchActionMovies} />}
               </Route>
               <Route exact path="/watchlist">
-                {isAuthenticated && <WatchList /> }
+                {isAuthenticated && <WatchList fetchUrl={requests} />}
               </Route>
               <Route exact path="/movie/:id" component={isAuthenticated && MovieProfile} />
               <Route exact path="/aboutus" component={isAuthenticated && AboutUs} />

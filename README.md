@@ -48,4 +48,15 @@ MoviesDB an online database of information related to films, home videos, series
 * It is not accepted that something is merged in the main file before all team members agree on it.
 
 
+### Wireframes
 
+
+
+[Click to see wireframes >>](https://www.canva.com/design/DAEfAU_Xi2k/XbKbYx0FiwWj_x4q_HLuRQ/view?utm_content=DAEfAU_Xi2k&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
+
+## User stories
+As a user, I want to create a profile.
+As a user, I want to show a movies.
+As a user, I want to show an actors.
+As a user, I want to save movies in wishlist.
+As a user, I want delete a movie from wishlist.

@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import WatchList from './components/WatchList'
 import MovieProfile from './components/MovieProfile'
 import AboutUs from './components/AboutUs'
+import ActorsProfile from './components/Actorprofile'
 // import IsLoadingAndError from './IsLoadingAndError';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
               </Route>
               <Route exact path="/movie/:id" component={isAuthenticated && MovieProfile} />
               <Route exact path="/aboutus" component={isAuthenticated && AboutUs} />
+              <Route exact path="/actor/:id" component={isAuthenticated && ActorsProfile} />
             </Switch>
           </Router>
         </>

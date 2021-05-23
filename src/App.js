@@ -4,6 +4,8 @@ import requests from "./API/requests";
 import LandingPage from "./components/LandingPage";
 import Home from "./components/Home";
 import WatchList from './components/WatchList'
+import MovieProfile from './components/MovieProfile'
+import AboutUs from './components/AboutUs'
 // import IsLoadingAndError from './IsLoadingAndError';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 class App extends Component {
@@ -26,6 +28,8 @@ class App extends Component {
               <Route exact path="/watchlist">
                 <WatchList />
               </Route>
+              <Route exact path="/movie/:id" component={MovieProfile} />
+              <Route exact path="/aboutus" component={AboutUs} />
             </Switch>
           </Router>
         </>

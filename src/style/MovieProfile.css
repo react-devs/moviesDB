@@ -1,8 +1,28 @@
-body{
+ body{
     padding: 0%;
     margin: 0%;
 }
+.cont{
+    width: 100%;
 
+}
+
+.backgroundImage{
+    width: inherit;
+    height: 600px;
+    background-size: cover;
+}
+
+.overlay{
+    margin-top: 65px;
+    height: 600px;
+    width: 100%;
+    background: rgba(27, 18, 18, 85%);
+    
+
+}
+
+/*
 .content{
     position: relative;
     top: 0;
@@ -43,6 +63,7 @@ body{
     right: 0;
     background: rgba(27, 18, 18, 0.3);
     padding-top: 80px;
+    margin-top: 62px;
 
 }
 
@@ -86,4 +107,4 @@ body{
     border-bottom: 2px dashed black;
     padding: 5px;
     margin: 30px;
-}
+} */

@@ -23,6 +23,8 @@ class MovieProfile extends Component {
       movieDescription: '',
       movieYear: '',
       duration: '',
+      movieImg: '',
+      movieGenres: '',
       id: ''
     }
 
@@ -51,7 +53,9 @@ class MovieProfile extends Component {
       movieName: movieIdresponse.data.title,
       movieDescription: movieIdresponse.data.overview,
       movieYear: movieIdresponse.data.release_date,
-      duration: movieIdresponse.data.runtime
+      duration: movieIdresponse.data.runtime,
+      movieImg: movieIdresponse.data.poster_path,
+      movieGenres: movieIdresponse.data.genres[0].name
     });
 
   }
@@ -63,7 +67,9 @@ class MovieProfile extends Component {
       movieName: this.state.movieName,
       movieDescription: this.state.movieDescription,
       movieYear: this.state.movieYear,
-      duration: this.state.duration
+      duration: this.state.duration,
+      movieImg: this.state.movieImg,
+      movieGenres: this.state.movieGenres
 
     }
 

@@ -31,7 +31,7 @@ class App extends Component {
               </Route>
               <Route exact path="/movie/:id" component={isAuthenticated && MovieProfile} />
               <Route exact path="/aboutus" component={isAuthenticated && AboutUs} />
-              <Route exact path="/actor/:id" component={isAuthenticated && ActorsProfile} />
+              <Route exact path="/actor/:id/:credit_id" component={isAuthenticated && ActorsProfile} />
             </Switch>
           </Router>
         </>

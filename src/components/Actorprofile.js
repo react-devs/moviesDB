@@ -1,24 +1,39 @@
 import React, { Component } from 'react'
-// import axios from '../API/axios'
+import axios from '../API/axios'
 import '../style/ActorProfile.css';
 
 export class ActorsProfile extends Component {
-
-
-// componentDidMount =  async()=>{
-//     const {actorUrl} = this.props
-
-//     const response = await axios.get(actorUrl)
-
-//     // https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_cast=${this.props.credit_id}
-//     // https://api.themoviedb.org/3/person/${this.props.credit_id}/movie_credits?api_key=327835964ac0c735575e3185ae623d2b
-
-//     this.setState({
-//       movies:response.data.results
-//     })
+  state = {
+    movisOfActors: [],
+    actorInfo: [],
+    actorKnownFor:[]
     
-// }
+  }
+ 
+componentDidMount =  async()=>{
+    const actorUrl = `https://api.themoviedb.org/3/person/${this.props.match.params.id}/movie_credits?api_key=327835964ac0c735575e3185ae623d2b`
+    
+    const actorInfo = `https://api.themoviedb.org/3/credit/${this.props.match.params.credit_id}?api_key=327835964ac0c735575e3185ae623d2b`
+    const response = await axios.get(actorUrl)
+    const responseInfo = await axios.get(actorInfo)
+    console.log(this.props)
+    // https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_cast=${this.props.credit_id}
+    // https://api.themoviedb.org/3/person/${this.props.credit_id}/movie_credits?api_key=327835964ac0c735575e3185ae623d2b
+    console.log(responseInfo);
+    this.setState({
+      movisOfActors:response.data.cast,
+      actorInfo:responseInfo.data.person,
+      actorKnownFor:responseInfo.data.person.known_for[0]
+    })
+    
+}
   render() {
+    const baseImgUrl = "https://image.tmdb.org/t/p/original";
+    const moviesrelated = this.state.movisOfActors.map((movie) => {
+      return(
+        <img className='movies' src= {`${baseImgUrl}${movie.poster_path}`} alt=''/>
+      )
+    })
     return (
       <div>
         <header>
@@ -26,21 +41,21 @@ export class ActorsProfile extends Component {
         </header>
         <main>
           <div className = 'body'>
-            <img className='Img' src='https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F968210608%2F960x0.jpg%3Ffit%3Dscale' alt='' />
+            <img className='Img' src={`${baseImgUrl}${this.state.actorInfo.profile_path}`} alt='' />
             <div className='info'>
-              <h2>name of the actor</h2>
-              <p>Overveiw</p>
-              <p>Date Of Birth: </p>
-              <p>Country</p>
+              <h2>{this.state.actorInfo.name}</h2>
+              <p>Known For : {this.state.actorKnownFor.title} </p>
+              <p>Job : {this.state.actorInfo.known_for_department} </p> 
+              <p>Popularity : {this.state.actorInfo.popularity}</p>
             </div>
           </div>
           <div className='moviesOfActor'>
             <h1>Movies of the actor</h1>
-            <img className='movies' src='https://m.media-amazon.com/images/M/MV5BMjMyNDkzMzI1OF5BMl5BanBnXkFtZTgwODcxODg5MjI@._V1_UX182_CR0,0,182,268_AL_.jpg' alt=''/>
-            <img className='movies' src='https://m.media-amazon.com/images/M/MV5BMjMyNDkzMzI1OF5BMl5BanBnXkFtZTgwODcxODg5MjI@._V1_UX182_CR0,0,182,268_AL_.jpg' alt=''/>
-            <img className='movies' src='https://m.media-amazon.com/images/M/MV5BMjMyNDkzMzI1OF5BMl5BanBnXkFtZTgwODcxODg5MjI@._V1_UX182_CR0,0,182,268_AL_.jpg' alt=''/>
-          </div>
 
+          </div>
+          <div className='moviesOfActor'>
+            {moviesrelated}
+          </div>
         </main>
         <footer>
 

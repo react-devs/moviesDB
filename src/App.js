@@ -1,37 +1,59 @@
 import React, { Component } from "react";
 import { withAuth0 } from "@auth0/auth0-react";
 import requests from "./API/requests";
+import axios from "axios";
 import LandingPage from "./components/LandingPage";
 import Home from "./components/Home";
-import WatchList from './components/WatchList'
-import MovieProfile from './components/MovieProfile'
-import AboutUs from './components/AboutUs'
-import ActorsProfile from './components/Actorprofile'
+import WatchList from "./components/WatchList";
+import MovieProfile from "./components/MovieProfile";
+import AboutUs from "./components/AboutUs";
+import ActorsProfile from "./components/Actorprofile";
 // import IsLoadingAndError from './IsLoadingAndError';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 class App extends Component {
   render() {
     console.log(requests.fetchTrending);
-    const { isAuthenticated } = this.props.auth0;
+    const { isAuthenticated, user } = this.props.auth0;
+
+    const iflogIn = async () => {
+      console.log(user);
+      const userBody = {
+        email: user.email,
+      };
+
+      const response = await axios.post("http://localhost:8081/user", userBody);
+
+      console.log(response);
+    };
+
+    isAuthenticated && iflogIn();
+
     return (
       <div>
         <>
           <Router>
             <Switch>
               <Route exact path="/">
-                {!isAuthenticated ? <LandingPage /> : <Home fetchUrl={requests.fetchActionMovies} /> }
+                {!isAuthenticated ? (
+                  <LandingPage />
+                ) : (
+                  <Home fetchUrl={requests.fetchActionMovies} />
+                )}
               </Route>
             </Switch>
             <Switch>
               <Route exact path="/home">
-              {isAuthenticated && <Home fetchUrl={requests.fetchActionMovies} /> }
+                {isAuthenticated && (
+                  <Home fetchUrl={requests.fetchActionMovies} />
+                )}
               </Route>
               <Route exact path="/watchlist">
-                {isAuthenticated && <WatchList /> }
+                {isAuthenticated && <WatchList />}
               </Route>
               <Route exact path="/movie/:id" component={isAuthenticated && MovieProfile} />
               <Route exact path="/aboutus" component={isAuthenticated && AboutUs} />
               <Route exact path="/actor/:id/:credit_id" component={isAuthenticated && ActorsProfile} />
+
             </Switch>
           </Router>
         </>

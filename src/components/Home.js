@@ -4,6 +4,7 @@ import HeroBanner from "./HeroBanner";
 import Card from "./Card";
 import NavBar from "./NavBar";
 import '../style/home.css'
+import requests from "../API/requests";
 
 
 class Home extends Component {
@@ -17,7 +18,9 @@ class Home extends Component {
     console.log(fetchUrl);
 
     const response = await axios.get(fetchUrl);
+    
     console.log(response.data.results[0].id);
+
     this.setState({
       movies: response.data.results,
     });
@@ -29,7 +32,7 @@ class Home extends Component {
     return (
       <>
         <NavBar />
-        <HeroBanner />
+        <HeroBanner TopFive={requests.fetchTrending} />
         <div className="moviesListContainer" >
           {moviesList}
         </div>

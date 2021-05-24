@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { Component } from "react";
 import NavBar from "./NavBar";
 import { withAuth0 } from "@auth0/auth0-react";
-// import "../style/watchlist.css";
+import "../style/watchlist.css";
 // import Img from '../img/a.jpg'
 class WatchList extends Component {
   constructor(props) {
@@ -63,32 +63,33 @@ class WatchList extends Component {
     return (
       <>
         <NavBar />
-        <h1 style={{ color: "black", margin: "5rem" }}>Wish List</h1>
-        {this.state.watchListMovies.map((movie, idx) => {
-          return (
-            <>
-
-
-              <div id="card_container" data-offset="2">
-                <div className="pg"></div>
-                <div id="card">
-                  <div className="shine"></div>
-                  <div className="text-block">
-                    <h1>
-                      {movie.name}
-                      <small>{movie.year}</small>
-                    </h1>
-                    <h2>{movie.duration}</h2>
-                    <p>
-                      {movie.description}
-                    </p>
-                    <button onClick={() => { this.deleteMovie(idx) }}> Delete </button>
+        <h1 style={{ color: "black", margin: "5rem" }}>WatchList</h1>
+        <div className="all-cards">
+          {this.state.watchListMovies.map((movie, idx) => {
+            return (
+              <>
+                <div id="card_container" data-offset="2">
+                  <div className="pg"></div>
+                  <div id="card">
+                    <div className="shine"></div>
+                    <div className="text-block">
+                      <h1>
+                        {movie.name}
+                        <small>{movie.year}</small>
+                      </h1>
+                      <h2>{movie.duration}</h2>
+                      <p>
+                        {movie.description}
+                      </p>
+                      <button onClick={() => { this.deleteMovie(idx) }}> Delete </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </>
-          );
-        })}
+              </>
+            );
+          })}
+        </div>
+
       </>
     );
   }

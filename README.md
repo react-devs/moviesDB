@@ -5,8 +5,12 @@ MoviesDB an online database of information related to films, home videos, series
 
 [Visit MoviesDB >>](https://sharp-curie-57385e.netlify.app/)
 
+[Domain Modeling of Front end >>](https://lucid.app/lucidspark/invitations/accept/inv_fec66ff4-11d9-436c-ab2d-af5b1a234bcf?viewport_loc=-85%2C-53%2C1280%2C636%2C0_0)
 
-## react-devs GROUP GUIDLINES :
+[Domain Modeling of Back end >>](https://lucid.app/lucidspark/invitations/accept/inv_3ac2a4ac-ff94-4c9f-a9c9-918d780c39fc?viewport_loc=-93%2C-31%2C1280%2C636%2C0_0)
+
+[Wireframes >>](https://www.canva.com/design/DAEfAU_Xi2k/XbKbYx0FiwWj_x4q_HLuRQ/view?utm_content=DAEfAU_Xi2k&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
+
 
 ### Team members:
 
@@ -16,7 +20,10 @@ MoviesDB an online database of information related to films, home videos, series
 * Sufian Hamdan
 * Sukina Abu-Hammad
 
-### Communication Plan:
+
+## react-devs GROUP GUIDLINES :
+
+### Communication Plan
 
 * Days of commnicate : every day.
 * Time to commnicate : any time during the day between (9am - 9pm).
@@ -25,7 +32,7 @@ MoviesDB an online database of information related to films, home videos, series
 
 * The daily meeting for assess all the tasks had done, and decide which need managing and which will merge to the main file. Everything shoulden’t merge to the main branch out of the meeting.
 
-### Conflict Plan:
+### Conflict Plan
 
 * Team climate characterized by interpersonal trust and mutual respect in which people are comfortable being themselves.
 
@@ -39,7 +46,7 @@ MoviesDB an online database of information related to films, home videos, series
 
 * Any time you want to push your branch pull the main to be sure that all updated.
 
-### Work Plan:
+### Work Plan
 
 * Tasks will be written and distributed in a fair way and managed by using a project management tool that is structured and specific.
 
@@ -48,11 +55,6 @@ MoviesDB an online database of information related to films, home videos, series
 * It is not accepted that something is merged in the main file before all team members agree on it.
 
 
-### Wireframes
-
-
-
-[Click to see wireframes >>](https://www.canva.com/design/DAEfAU_Xi2k/XbKbYx0FiwWj_x4q_HLuRQ/view?utm_content=DAEfAU_Xi2k&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
 
 ## User stories
 As a user, I want to create a profile.

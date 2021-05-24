@@ -79,7 +79,7 @@ class MovieProfile extends Component {
 
       return (
         <>
-          <Link to={`/actor/${actor.id}`}>
+          <Link to={`/actor/${actor.id}/${actor.credit_id}`}>
             <p key={index}>Actors: {actor.name}</p>
           </Link>
         </>

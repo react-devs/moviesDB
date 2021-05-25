@@ -11,10 +11,7 @@ export class LandingPage extends Component {
     return (
       <>
         <section className="showcase">
-          <header>
-            <h2 className="logo">MoviesDB</h2>
-            {/* <div className="toggle"></div> */}
-          </header>
+
           <video
             autoPlay
             loop
@@ -22,7 +19,7 @@ export class LandingPage extends Component {
           >
             <source src={backgroundVedio} type="video/mp4" />
           </video>
-          <div className="overlay"></div>
+          
           <div className="text">
             <h2>MovieDB</h2>
             <h3>The Open Movie Database</h3>

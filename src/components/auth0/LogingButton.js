@@ -3,7 +3,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 function LoginButton() {
   const { loginWithRedirect } = useAuth0();
   return (
-    <button onClick={loginWithRedirect}>Get Started</button>
+    <button className="AhlogOut" onClick={loginWithRedirect}>Get Started</button>
   );
 }
 export default LoginButton;

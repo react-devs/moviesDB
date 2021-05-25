@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+header{
+    background-color: #020202;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10%;
+    position: sticky;
+}
+
+.ahlogo{
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    color:  #edf0f1;
+}
+.nav__link{
+    list-style: none;
+    background-color: #020202;
+
+}
+
+.nav__link li{
+    display: inline-block;
+    padding: 0px 20px;
+    background-color: #020202;
+
+}
+
+.nav__link li a {
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+    background-color: #020202;
+    color:  #edf0f1;
+
+}
+
+.nav__link li a:hover {
+    color: #f6d71d;
+}
+
+.AhlogOut{
+    padding: 9px 25px;
+    margin: 0px 0px 0px 0px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-weight: 500;
+}
+
+.AhlogOut:hover{
+    background-color: rgba(0, 136, 169, 0.8);
+    padding: 9px 25px;
+    letter-spacing:2px
+}
+
+
+

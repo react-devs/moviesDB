@@ -39,9 +39,7 @@ class MovieProfile extends Component {
       rating: '',
       imdbId: '',
       trailerId: '',
-      similerMoviesArray: [],
-      movieImg: '',
-      movieGenres: '',
+      similerMoviesArray: []
     }
 
   }
@@ -86,8 +84,6 @@ class MovieProfile extends Component {
       totalVote: movieIdresponse.data.vote_count,
       rating: movieIdresponse.data.vote_average,
       imdbId: movieIdresponse.data.imdb_id,
-      movieImg: movieIdresponse.data.poster_path,
-      movieGenres: movieIdresponse.data.genres[0].name
 
 
     });
@@ -120,9 +116,7 @@ class MovieProfile extends Component {
       movieName: this.state.movieName,
       movieDescription: this.state.movieDescription,
       movieYear: this.state.movieYear,
-      duration: this.state.duration,
-      movieImg: this.state.movieImg,
-      movieGenres: this.state.movieGenres
+      duration: this.state.duration
 
     }
 

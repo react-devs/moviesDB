@@ -17,6 +17,13 @@
 	margin: 0;
 } */
 
+.aboutTeam{
+	text-align: center;
+	background-color: #0f0f13;
+color: white;
+/* margin-bottom: 0; */
+}
+
 h3 {
 	margin: 10px 0;
 }
@@ -33,15 +40,17 @@ p {
 
 .all-cards {
 	display: flex;
-	/* justify-content: space-between; */
+	justify-content: space-around;
 	/* flex-direction: row; */
 	flex-wrap: wrap;
+	background-color: #0f0f13;
+	/* margin-top:0; */
 
 }
 
 
 .card-container {
-	background-color: #231E39;
+	background-color: #423d57;
 	border-radius: 5px;
 	box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
 	color: #B3B8CD;
@@ -68,26 +77,34 @@ p {
 }
 
 .card-container .round {
-	border: 1px solid #03BFCB;
+	border: 1px solid #cb033c;
 	border-radius: 50%;
 	padding: 7px;
 }
 
 button.primary {
-	background-color: #03BFCB;
-	border: 1px solid #03BFCB;
+	background-color: #9b9ba0;
+	border: 2px solid #a09393;
 	border-radius: 3px;
 	color: #231E39;
 	font-family: Montserrat, sans-serif;
 	font-weight: 500;
 	padding: 10px 10px;
-	margin-left: 30px;
+	margin-left: 15px;
 }
 
 button.primary.ghost {
 	background-color: transparent;
-	color: #02899C;
+	/* color: #d3597e; */
+	
 }
+.primary a{color: #bf4e4e; }
+.ghost{color: #a78690;}
+.buttons a:active,
+.buttons a:focus,
+.buttons a:hover {
+  color: #802d5d;
+  text-decoration: none;}
 
 .skills {
 	background-color: #1F1A36;

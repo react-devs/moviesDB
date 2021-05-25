@@ -1,47 +1,37 @@
-
-
-.Img {
-    width: 500px;
-    height: 550px;
-    margin-left: 30px;
-    box-shadow: 8px;
+.abed_main{
+    background-color: #0F0F13;
 }
-.actorCard{
-    width: 100%; 
-    text-align : center;
-    justify-content: center;
-}
-.actorImg{
-    width:300px;
-    height:350px;
-}
-.card{
-    display: flex;
-}
-.container{
-    width: 100%;
-}
-
-.info {
-    margin-left: 30px;
-    color: rgb(230, 218, 201);
-    font-family: sans-serif;
-}
-.moviesOfActor{
-    margin-left: 30px;
-    font-family: sans-serif;
-    color: rgb(230, 218, 201);
+.abed_cont_cards{
     display: flex;
     flex-wrap: wrap;
 }
-.movies{
-    box-shadow: 8px;
+
+.abed_card {
+    box-shadow: 0 5px 10px 0 #210c3fef;
+    transition: 0.3s;
+    width: 20%;
+    margin-left: 30px;
+    margin-bottom: 30px;
     
-}
-.text{
-    text-align : center;
+  }
+  
+  .abed_card:hover {
+    box-shadow: 0 10px 20px 0 #210c3fef;
+  }
+  
+  .abed_container {
+    padding: 2px 16px;
+    text-align: center;
     justify-content: center;
+    
+  }
+  .movie_title{
+    color: #E7E7E7;
+  }
+.moviesOfActor{
+    margin-left: 30px;
 }
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800');
  * {
      box-sizing: border-box;
@@ -158,7 +148,7 @@
          width: 100%;
     }
      .info_section {
-         background: linear-gradient(to right, #696919bd 100%, transparent 100%)
+         background: linear-gradient(to right, #210c3fd7 100%, transparent 100%)
     }
 
      .blur_back {
@@ -190,10 +180,10 @@
     }
 }
  #bright {
-     box-shadow: 0px 0px 150px -45px rgba(255, 51, 0, 0.5);
+     box-shadow: 0px 0px 150px -45px #210c3fef;
 }
  #bright:hover {
-     box-shadow: 0px 0px 120px -55px rgba(255, 51, 0, 0.5);
+     box-shadow: 0px 0px 120px -55px #210c3f;
 }
  /* .bright_back {
      background: url("https://occ-0-2433-448.1.nflxso.net/art/cd5c9/3e192edf2027c536e25bb5d3b6ac93ced77cd5c9.jpg");

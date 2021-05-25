@@ -26,10 +26,10 @@ class HeroBanner extends Component {
       return (
         <li key={idx}>
           <div class="image_title">
-            <a href={() => false}>{movie.original_title}</a>
+            <a className="ahmadA" href={() => false}>{movie.original_title}</a>
           </div>
           <Link to={`movie/${movie.id}`}>
-            <a href={() => false}>
+            <a className="ahmadA" href={() => false}>
               <img
                 src={`${baseImgUrl}${movie.backdrop_path}`}
                 alt="transformers4_1080x640"

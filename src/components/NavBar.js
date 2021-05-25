@@ -10,10 +10,10 @@ import '../style/navbar.css'
 class NavBar extends Component {
   render() {
     return (
-      <header>
+      <header className="ahheader" >
         <h2 className="ahlogo" >MoviesDB</h2>
-        <nav>
-          <ul className="nav__link" >
+        <nav className="ahnav" >
+          <ul className="aanav__link" >
             <li><Link to="/home" ><a href={() => false}>Home</a></Link></li>
             <li> <Link to="/watchlist" ><a href={() => false}>WatchList</a></Link></li>
             <li> <Link to="/aboutus" ><a href={() => false}>About</a></Link></li>

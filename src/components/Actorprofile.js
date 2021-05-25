@@ -8,6 +8,7 @@ import Card from 'react-bootstrap/Card';
 // import Col from 'react-bootstrap/Col';
 // import Row from 'react-bootstrap/Row';
 import NavBar from "./NavBar";
+import { CardColumns } from 'react-bootstrap';
 
 export class ActorsProfile extends Component {
   state = {
@@ -50,42 +51,7 @@ componentDidMount =  async()=>{
         
         <main>
           <NavBar /> 
-          {/* <br/>
-          <Container>
-            <Row>
-              <Col style ={{width : '25%'}}>
-                <img className='actorImg' src={`${baseImgUrl}${this.state.actorInfo.profile_path}`} alt=''/>
-              </Col>
-              <Col style ={{width : '-50%' , marginLeft: '12%'}}>
-                <div className='info'>
-                  <h2>{this.state.actorInfo.name}</h2>
-                  <p>Known For : {this.state.actorKnownFor.title} </p>
-                  <p>Job : {this.state.actorInfo.known_for_department} </p> 
-                  <p>Popularity : {this.state.actorInfo.popularity}</p>
-                </div> 
-              </Col>
-            </Row>
-            </Container> */}
-          {/* <Card className="bg-dark text-white actorCard">
-            <Card.Img className='actorImg' src={`${baseImgUrl}${this.state.actorInfo.profile_path}`} alt=''/>
-            <Card.ImgOverlay>
-              <Card.Title>{this.state.actorInfo.name}</Card.Title>
-              <Card.Text>
-                Known For : {this.state.actorKnownFor.title}
-              </Card.Text>
-              <Card.Text>Job : {this.state.actorInfo.known_for_department}</Card.Text>
-              <Card.Text>Popularity : {this.state.actorInfo.popularity}</Card.Text>
-            </Card.ImgOverlay>
-          </Card> */}
-          {/* <div className = 'body'>
-            <img className='Img' src={`${baseImgUrl}${this.state.actorInfo.profile_path}`} alt='' />
-            <div className='info'>
-              <h2>{this.state.actorInfo.name}</h2>
-              <p>Known For : {this.state.actorKnownFor.title} </p>
-              <p>Job : {this.state.actorInfo.known_for_department} </p> 
-              <p>Popularity : {this.state.actorInfo.popularity}</p>
-            </div> */}
-          {/* </div> */}
+          
           <div className="movie_card" id="bright">
   <div className="info_section">
     <div className="movie_header">
@@ -103,7 +69,7 @@ componentDidMount =  async()=>{
 
           </div>
           <div className='moviesOfActor'>
-            {moviesrelated}
+            <CardColumns>{moviesrelated}</CardColumns>
           </div>
         </main>
         <footer>

@@ -102,12 +102,16 @@ class MovieProfile extends Component {
     const reqUrlSimilerMovies = `/movie/${this.state.id}/similar?api_key=${process.env.REACT_APP_MOVIES_DB_KEY}&language=en-US&page=1`;
     const similerMovies = await axios.get(reqUrlSimilerMovies);
 
-    console.log('similer movies array', similerMovies); 
+    console.log('similer movies array', similerMovies);
 
-    await this.setState({
-      trailerId: trailer.data.results[0].key,
-      similerMoviesArray: similerMovies.data.results
-    })
+    if(trailer.data.results.length){
+      await this.setState({
+        trailerId: trailer.data.results[0].key,
+        similerMoviesArray: similerMovies.data.results
+      })
+    }
+
+
 
     console.log('this is trailer id', this.state.trailerId);
 
@@ -115,6 +119,7 @@ class MovieProfile extends Component {
 
   getWatchedlistByClick = async (e) => {
     e.preventDefault();
+
     const bodyData = {
       email: this.state.email,
       movieName: this.state.movieName,
@@ -123,22 +128,44 @@ class MovieProfile extends Component {
       duration: this.state.duration,
       movieImg: this.state.movieImg,
       movieGenres: this.state.movieGenres
-
     }
 
-    await axios.post(`http://localhost:8081/movies`, bodyData);
 
+    console.log(bodyData)
+
+    const sendtes = await axios.post(`http://localhost:8081/movies`, bodyData);
+
+    console.log(sendtes)
   }
 
 
 
   render() {
+    const semiList = this.state.similerMoviesArray.length && this.state.similerMoviesArray.slice(0, 4).map((currentMovie, index) => { 
+      return (
+        <a href="/#" className="movie-card" key={index}>
+          <h3 className="movie-title">{currentMovie.title}</h3>
+          <img src={`${this.state.ImageBaseUrl}${currentMovie.backdrop_path}`} alt="" className="movie-poster" />
+          <div className="movie-meta">
+            <span className="movie-duration">2ч 7мин</span>
+            <span className="movie-year">2012</span>
+            <span className="movie-lang">rus</span>
+          </div>
+          <div className="movie-description">
+            <p className="movie-description-text">{currentMovie.overview.split(' ').slice(0, 10).join(' ')}</p>
+          </div>
+        </a>
+      )
+    })
+
 
     const actor = this.state.actors.slice(0, 3).map((actor, index) => {
 
+      console.log(actor)
+
       return (
         <>
-          <Link to={`/actor/${actor.id}`}>
+          <Link to={`/actor/${actor.id}/${actor.credit_id}`}>
             <span key={index} style={{ color: 'white', padding: '5px' }}>{actor.name} </span>
           </Link>
         </>
@@ -175,7 +202,7 @@ class MovieProfile extends Component {
 
             <p style={{ margin: '12px 0px 12px 0px' }}><strong>Overview: </strong> {this.state.movieDescription}</p>
             <div className="btn-block">
-              <button className="btn-watch">Add To Watchlist</button>
+              <button onClick={this.getWatchedlistByClick} className="btn-watch">Add To Watchlist</button>
               {/* <button className="btn-wait">Посмотреть позже</button> */}
             </div>
           </div>
@@ -187,24 +214,7 @@ class MovieProfile extends Component {
               <h2 className="section-header ">Similer Movies</h2>
               <div className="movies-suf">
                 {/* looping array  */}
-                {this.state.similerMoviesArray.length && this.state.similerMoviesArray.slice(0, 4).map((currentMovie, index) => { 
-                  return (
-                    <a href="/#" className="movie-card" key={index}>
-                      <h3 className="movie-title">{currentMovie.title}</h3>
-                      <img src={`${this.state.ImageBaseUrl}${currentMovie.backdrop_path}`} alt="" className="movie-poster" />
-                      <div className="movie-meta">
-                        <span className="movie-duration">2ч 7мин</span>
-                        <span className="movie-year">2012</span>
-                        <span className="movie-lang">rus</span>
-                      </div>
-                      <div className="movie-description">
-                        <p className="movie-description-text">{currentMovie.overview.split(' ').slice(0, 10).join(' ')}</p>
-                      </div>
-                    </a>
-                  )
-                })
-
-                }
+                {semiList}
 
               </div>
             </section>

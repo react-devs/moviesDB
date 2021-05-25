@@ -98,7 +98,7 @@ class WatchList extends Component {
                       </div>
                       <div className="suk-mr-grid">
                         <div className="suk-col1">
-                          {/* <p className="suk-movie-description">{movie.description.split(' ').slice(0, 30).join(' ')} </p> */}
+                          <p className="suk-movie-description">{movie.description.split(' ').slice(0, 30).join(' ')} </p>
                         </div>
                       </div>
                       <div className="suk-mr-grid actors-row">

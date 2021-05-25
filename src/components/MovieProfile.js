@@ -5,8 +5,14 @@ import { Link } from "react-router-dom";
 // https://api.themoviedb.org/3/movie/578701/videos?api_key=327835964ac0c735575e3185ae623d2b&language=en-US movie trailer
 // https://api.themoviedb.org/3/movie/578701?api_key=327835964ac0c735575e3185ae623d2b&language=en-US movie details
 // https://api.themoviedb.org/3/movie/578701/credits?api_key=327835964ac0c735575e3185ae623d2b&language=en-US actor details
+// https://api.themoviedb.org/3/movie/460465/similar?api_key=327835964ac0c735575e3185ae623d2b&language=en-US&page=1 similer movies
+
 import NavBar from "./NavBar";
 import axios from "../API/axios";
+// import Container from 'react-bootstrap/Container';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
+// import BackGroundImage from '../components/BackGroundImage';
 
 
 
@@ -17,15 +23,23 @@ class MovieProfile extends Component {
     const { user } = this.props.auth0;
 
     this.state = {
+      ImageBaseUrl: 'https://image.tmdb.org/t/p/original',
+      posterPath: '',
+      backDropPath: '',
       actors: [],
       email: user.email,
       movieName: '',
       movieDescription: '',
       movieYear: '',
       duration: '',
-      movieImg: '',
-      movieGenres: '',
-      id: ''
+      id: '',
+      cat: [],
+      lang: '',
+      totalVote: '',
+      rating: '',
+      imdbId: '',
+      trailerId: '',
+      similerMoviesArray: []
     }
 
   }
@@ -40,23 +54,58 @@ class MovieProfile extends Component {
     const actorUrl = `/movie/${this.props.match.params.id}/credits?api_key=${process.env.REACT_APP_MOVIES_DB_KEY}&append_to_response=person_id`;
 
 
+
+
+
     const movieIdresponse = await axios.get(detailsUrl);
     console.log('details url', movieIdresponse);
+
     const creditResponse = await axios.get(actorUrl);
 
-    console.log(movieIdresponse.data.id);
-    console.log('new link', creditResponse);
 
-    this.setState({
+
+
+
+
+    console.log(movieIdresponse.data.id);
+    console.log('Actor array', creditResponse);
+
+    await this.setState({
       id: movieIdresponse.data.id,
       actors: creditResponse.data.cast,
       movieName: movieIdresponse.data.title,
       movieDescription: movieIdresponse.data.overview,
       movieYear: movieIdresponse.data.release_date,
       duration: movieIdresponse.data.runtime,
-      movieImg: movieIdresponse.data.poster_path,
-      movieGenres: movieIdresponse.data.genres[0].name
+      backDropPath: movieIdresponse.data.backdrop_path,
+      posterPath: movieIdresponse.data.poster_path,
+      cat: movieIdresponse.data.genres,
+      lang: movieIdresponse.data.original_language,
+      totalVote: movieIdresponse.data.vote_count,
+      rating: movieIdresponse.data.vote_average,
+      imdbId: movieIdresponse.data.imdb_id,
+
+
     });
+
+    //req trailer url
+    const trailerUrl = `/movie/${this.state.id}/videos?api_key=${process.env.REACT_APP_MOVIES_DB_KEY}&language=en-US`;
+    const trailer = await axios.get(trailerUrl);
+
+    console.log('trailer Array', trailer);
+
+    // req similer movies array
+    const reqUrlSimilerMovies = `/movie/${this.state.id}/similar?api_key=${process.env.REACT_APP_MOVIES_DB_KEY}&language=en-US&page=1`;
+    const similerMovies = await axios.get(reqUrlSimilerMovies);
+
+    console.log('similer movies array', similerMovies); 
+
+    await this.setState({
+      trailerId: trailer.data.results[0].key,
+      similerMoviesArray: similerMovies.data.results
+    })
+
+    console.log('this is trailer id', this.state.trailerId);
 
   }
 
@@ -67,9 +116,7 @@ class MovieProfile extends Component {
       movieName: this.state.movieName,
       movieDescription: this.state.movieDescription,
       movieYear: this.state.movieYear,
-      duration: this.state.duration,
-      movieImg: this.state.movieImg,
-      movieGenres: this.state.movieGenres
+      duration: this.state.duration
 
     }
 
@@ -80,13 +127,13 @@ class MovieProfile extends Component {
 
 
   render() {
-    // const baseUrl = 'https://www.youtube.com/watch?v='
+
     const actor = this.state.actors.slice(0, 3).map((actor, index) => {
 
       return (
         <>
-          <Link to={`/actor/${actor.id}/${actor.credit_id}`}>
-            <p key={index}>Actors: {actor.name}</p>
+          <Link to={`/actor/${actor.id}`}>
+            <span key={index} style={{ color: 'white', padding: '5px' }}>{actor.name} </span>
           </Link>
         </>
       )
@@ -96,69 +143,76 @@ class MovieProfile extends Component {
 
     return (
       <>
-        <NavBar /> {/* <h1>movie id ={this.props.match.params.id}</h1> */}
-        {/* <div className="cont">
-          
-            <div className="backgroundImage" style={{
-              backgroundImage: `url("https://image.tmdb.org/t/p/original/c0izdYdnTe4uMRifHgvTA85wPz0.jpg")`
-            }}>
-              <div className="overlay">
-           heloo
+        <NavBar />
 
-          
+        <main className="movie-info" style={{ height: '640px', backgroundImage: `url("${this.state.ImageBaseUrl}${this.state.backDropPath}")` }} >
+          <div className="centered-container-suf">
+            <h1>{this.state.movieName}</h1>
+            {/* <img src={"https://netology-code.github.io/Education-Show/img/title.png"} alt="" /> */}
+
+            <div className="movie-meta">
+              <span className="movie-duration">Duration / {this.state.duration}</span>
+              <span className="movie-year">Year / {this.state.movieYear}</span>
+              <span className="movie-lang">LANG / {this.state.lang}</span>
+              <span className="rating" style={{ backgroundColor: 'green', width: '30px', textAlign: 'center' }}>{this.state.rating}</span>
+            </div>
+
+            <p style={{ margin: '12px 0px 12px 0px' }}><strong>Actors:</strong> {actor}</p>
+
+            <p style={{ margin: '12px 0px 12px 0px' }}><strong>Category:</strong>
+              {this.state.cat.map((cat, index) => {
+                return <span key={index}> {cat.name} </span>
+              })
+
+              }
+            </p>
+
+            <p style={{ margin: '12px 0px 12px 0px' }}><strong>Overview: </strong> {this.state.movieDescription}</p>
+            <div className="btn-block">
+              <button className="btn-watch">Add To Watchlist</button>
+              {/* <button className="btn-wait">Посмотреть позже</button> */}
             </div>
           </div>
-        </div> */}
-        <div>
-          {actor}
+        </main>
 
-          <button onClick={(e) => { this.getWatchedlistByClick(e) }}>Add to watchlist</button>
-        </div>
+        <aside className="additional-info">
+          <div className="centered-container _dotted">
+            <section className="section movie-similar">
+              <h2 className="section-header ">Similer Movies</h2>
+              <div className="movies-suf">
+                {/* looping array  */}
+                {this.state.similerMoviesArray.length && this.state.similerMoviesArray.slice(0, 4).map((currentMovie, index) => { 
+                  return (
+                    <a href="/#" className="movie-card" key={index}>
+                      <h3 className="movie-title">{currentMovie.title}</h3>
+                      <img src={`${this.state.ImageBaseUrl}${currentMovie.backdrop_path}`} alt="" className="movie-poster" />
+                      <div className="movie-meta">
+                        <span className="movie-duration">2ч 7мин</span>
+                        <span className="movie-year">2012</span>
+                        <span className="movie-lang">rus</span>
+                      </div>
+                      <div className="movie-description">
+                        <p className="movie-description-text">{currentMovie.overview.split(' ').slice(0, 10).join(' ')}</p>
+                      </div>
+                    </a>
+                  )
+                })
 
-        {/* <div className="coverImage">
-          
-          <img className="imageBackground" src="https://image.tmdb.org/t/p/original/c0izdYdnTe4uMRifHgvTA85wPz0.jpg" alt="ss"/>
-          
+                }
+
+              </div>
+            </section>
+
+            <section className="section movie-details">
+              <h2 className="section-header">Trailer</h2>
+              <div className="trailer">
+                <iframe width="900" height="500" src={`https://www.youtube.com/embed/${this.state.trailerId}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+              </div>
+
+            </section>
           </div>
+        </aside>
 
-          <div className="overlay">
-          <div className="details">
-          <h1 className="movieTitle">Army of the Dead</h1>
-          <h4>Category: Action, Thriller</h4>
-          <div>
-          <h3 className="ratings">6.7</h3>
-          <button className="watchlist">Add To Watchlist</button>
-          </div>
-
-          <p><strong>Overview: </strong> Following a zombie outbreak in Las Vegas, a group of mercenaries take the ultimate gamble: venturing into the quarantine zone to pull off the greatest heist ever attempted.</p>
-          <p>language: en</p>
-          <p>Total Votes: 128</p>
-          <p>Actors: </p>
-          <p>Release date: 2021-05-14</p>
-
-
-
-          </div>
-          
-
-          <div className="MovieImage">
-            <img className="image" src="https://image.tmdb.org/t/p/original/x3taBaWfRzw1NIKhEPpKPwKBAOC.jpg" alt="ss" />
-          </div>
-          </div>
-
-
-          <div className="clearFloats"></div>
-
-
-          <div className="TrailerSection">
-            <h1 className="trailerHeading">Movie Trailer</h1>
-            <div className="">
-
-            <iframe width="900" height="500" src="https://www.youtube.com/embed/tI1JGPhYBS8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            
-
-          </div> */}
       </>
     );
   }

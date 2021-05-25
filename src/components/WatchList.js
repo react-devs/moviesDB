@@ -4,6 +4,7 @@ import NavBar from "./NavBar";
 import { withAuth0 } from "@auth0/auth0-react";
 import "../style/watchlist.css";
 // import watchlistBanner from "./watchlistBanner";
+import Footer from "../components/Footer";
 
 class WatchList extends Component {
   constructor(props) {
@@ -82,6 +83,7 @@ class WatchList extends Component {
                       <div className="suk-mr-grid">
                         <div className="suk-col1">
                           <h1>{movie.name}</h1>
+                          <p style={{color: "wheat"} }>Added on: {movie.time}</p>
                           <ul className="suk-movie-gen">
                             <li>{movie.year} /</li>
                             <li>{movie.duration} min /</li>
@@ -117,6 +119,8 @@ class WatchList extends Component {
             );
           })}
         </div>
+
+        <Footer />
 
       </>
     );

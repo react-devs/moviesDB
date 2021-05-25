@@ -17,11 +17,17 @@
 	margin: 0;
 } */
 
-.aboutTeam{
+.aboutTeamMembers{
 	text-align: center;
 	background-color: #0f0f13;
-color: white;
+	color: white;
 /* margin-bottom: 0; */
+}
+
+.TeamMembers{
+	margin-bottom: 0;
+
+	padding-top: 60px;
 }
 
 h3 {

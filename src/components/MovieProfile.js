@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withAuth0 } from "@auth0/auth0-react";
 import "../style/MovieProfile.css";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer"
 // https://api.themoviedb.org/3/movie/578701/videos?api_key=327835964ac0c735575e3185ae623d2b&language=en-US movie trailer
 // https://api.themoviedb.org/3/movie/578701?api_key=327835964ac0c735575e3185ae623d2b&language=en-US movie details
 // https://api.themoviedb.org/3/movie/578701/credits?api_key=327835964ac0c735575e3185ae623d2b&language=en-US actor details
@@ -42,6 +43,7 @@ class MovieProfile extends Component {
       similerMoviesArray: [],
       movieImg: '',
       movieGenres: '',
+      time: '',
     }
 
   }
@@ -120,6 +122,10 @@ class MovieProfile extends Component {
   getWatchedlistByClick = async (e) => {
     e.preventDefault();
 
+    this.setState ({
+      time: new Date()
+    })
+
     const bodyData = {
       email: this.state.email,
       movieName: this.state.movieName,
@@ -127,7 +133,8 @@ class MovieProfile extends Component {
       movieYear: this.state.movieYear,
       duration: this.state.duration,
       movieImg: this.state.movieImg,
-      movieGenres: this.state.movieGenres
+      movieGenres: this.state.movieGenres,
+      time: this.state.time
     }
 
 
@@ -135,7 +142,7 @@ class MovieProfile extends Component {
 
     const sendtes = await axios.post(`http://localhost:8081/movies`, bodyData);
 
-    console.log(sendtes)
+    console.log(sendtes);
   }
 
 
@@ -228,6 +235,8 @@ class MovieProfile extends Component {
             </section>
           </div>
         </aside>
+
+        <Footer />
 
       </>
     );

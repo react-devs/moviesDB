@@ -7,7 +7,7 @@ import pic2 from '../img/2.jpg';
 import pic3 from '../img/3.jpg';
 import pic4 from '../img/4.jpg';
 import pic5 from '../img/5.jpg';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 class AboutUs extends Component {
 
@@ -20,13 +20,14 @@ class AboutUs extends Component {
         "githup": `https://github.com/ahmadammmoura`,
         "portfolio": ''
       },
-
       {
-        "name": "Sukina Hammand",
-        "img": pic1,
-        "githup": `https://github.com/Sukina12`,
-        "portfolio": 'https://sukinaportfolio.netlify.app/'
-      },
+        "name": "Sufian Hamdan",
+        "img": pic5,
+        "githup": `https://github.com/SufianHamdan`,
+        "portfolio": 'https://silly-kilby-e3c68d.netlify.app/'
+      }
+
+      ,
       {
         "name": "Abdalrahman AbuGhniem",
         "img": pic2,
@@ -39,12 +40,11 @@ class AboutUs extends Component {
         "githup": `https://github.com/AbeerAl-Rafati`,
         "portfolio": 'https://gallant-mirzakhani-57a870.netlify.app/profile-page'
       },
-
       {
-        "name": "Sufian Hamdan",
-        "img": pic5,
-        "githup": `https://github.com/SufianHamdan`,
-        "portfolio": ''
+        "name": "Sukina Hammand",
+        "img": pic1,
+        "githup": `https://github.com/Sukina12`,
+        "portfolio": 'https://sukinaportfolio.netlify.app/'
       }
 
     ]
@@ -90,7 +90,7 @@ class AboutUs extends Component {
     return (
       <>
         <NavBar />
-        <div className='aboutTeam'><h1>Meet Our Team</h1></div>
+        <div className='aboutTeamMembers'><h1 className="TeamMembers">Meet Our Team</h1></div>
         <div className="all-cards">
 
           {card}

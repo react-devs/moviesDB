@@ -16,7 +16,7 @@ class Card extends Component {
     return (
       <>
         <Link to={`movie/${id}`}>
-          <div className="card">
+          <div className="ahcard">
             <a href={() => false}>
               <div
                 className="img1"

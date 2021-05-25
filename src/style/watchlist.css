@@ -1,20 +1,45 @@
 /* @import "compass"; */
 /* @import "compass/css3" */
- @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+ /* @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
  @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,300italic,400italic,600italic,700italic,800italic);
+  */
  /* body {
 	 background: linear-gradient(rgba(30, 27, 38, 0.95), rgba(30, 27, 38, 0.95)), url("https://i.ibb.co/FDGqCmM/papers-co-ag74-interstellar-wide-space-film-movie-art-33-iphone6-wallpaper.jpg");
 	 background-position: center;
 	 background-size: cover;
 	 background-repeat: repeat;
+	 background-color: #0f0f13;
 } */
 
 
 
-.suk-sukall-cards-suk{
-  display: flex;
+.all-cards-suk{
+  /* display: flex;
+	justify-content: center; */
+	display: flex;
+	/* justify-content: space-around;
+	flex-direction: row; */
 	flex-wrap: wrap;
+	margin-top: 0;
+	background-color: #0f0f13;
+	position: absolute;
+    width: 100%;
+		height: 100%;
 
+}
+
+.row-suk {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column-suk {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
 }
 
  .suk-container {
@@ -24,8 +49,8 @@
  .suk-cellphone-container {
 	 width: 375px;
 	 height: 650px;
-	 background-color: #1e1b26;
-	 margin: 60px auto 0 auto;
+	 background-color: #503461;
+	 margin: 0 auto 0 auto;
 	 box-shadow: 5px 5px 115px -14px black;
 	 border-radius: 4px;
 }

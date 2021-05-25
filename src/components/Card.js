@@ -5,7 +5,7 @@ import "../style/card.css";
 class Card extends Component {
   render() {
     const baseImgUrl = "https://image.tmdb.org/t/p/original";
-    console.log(this.props.movie)
+    // console.log(this.props.movie)
     const { poster_path, original_title, id,overview,popularity } = this.props.movie;
 
     const cutOverview = overview.split(" ").slice(0,10).join(" ")

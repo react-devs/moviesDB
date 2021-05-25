@@ -8,6 +8,7 @@ import WatchList from "./components/WatchList";
 import MovieProfile from "./components/MovieProfile";
 import AboutUs from "./components/AboutUs";
 import ActorsProfile from "./components/Actorprofile";
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import IsLoadingAndError from './IsLoadingAndError';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 class App extends Component {

@@ -2,32 +2,25 @@ import React, { Component } from "react";
 import { withAuth0 } from '@auth0/auth0-react';
 import LogoutButton from './auth0/LogOut';
 import { Link } from "react-router-dom";
+import '../style/navbar.css'
+// import logo from '../img/MoviesDB.svg'
+
 
 
 class NavBar extends Component {
   render() {
     return (
-      <>
-        <nav className="nav-wrapper red darken-3">
-          <div className="container">
-            <p className="brand-logo">Movies Times</p>
-            <ul className="right">
-              <li>
-                <Link to="/home">Home</Link>
-              </li>
-              <li>
-                <Link to="/watchlist">WatchList</Link>
-              </li>
-              <li>
-                <Link to="/aboutus">About Us</Link>
-              </li>
-              <li>
-                <LogoutButton/>
-              </li>
-            </ul>
-          </div>
+      <header>
+        <h2 className="ahlogo" >MoviesDB</h2>
+        <nav>
+          <ul className="nav__link" >
+            <li><Link to="/home" ><a href={() => false}>Home</a></Link></li>
+            <li> <Link to="/watchlist" ><a href={() => false}>WatchList</a></Link></li>
+            <li> <Link to="/aboutus" ><a href={() => false}>About</a></Link></li>
+          </ul>
         </nav>
-      </>
+        <a className="cta" href={() => false}><LogoutButton/></a>
+      </header>
     );
   }
 }

@@ -1,42 +1,18 @@
 import React, { Component } from "react";
-import axios from "../API/axios";
 import HeroBanner from "./HeroBanner";
-import Card from "./Card";
 import NavBar from "./NavBar";
-import '../style/home.css'
+import "../style/home.css";
 import requests from "../API/requests";
-
+import FilterNav from "../components/FilterNav";
 
 class Home extends Component {
-  state = {
-    movies: [],
-  };
-
-  componentDidMount = async () => {
-    const { fetchUrl } = this.props;
-
-    console.log(fetchUrl);
-
-    const response = await axios.get(fetchUrl);
-    
-    console.log(response.data.results[0].id);
-
-    this.setState({
-      movies: response.data.results,
-    });
-  };
-
   render() {
-    const moviesList = this.state.movies.map((movie, idx) => <Card key={idx} movie={movie} />);
-
     return (
-      <>
+      <div className="ahcontainer">
         <NavBar />
         <HeroBanner TopFive={requests.fetchTrending} />
-        <div className="moviesListContainer" >
-          {moviesList}
-        </div>
-      </>
+        <FilterNav />
+      </div>
     );
   }
 }

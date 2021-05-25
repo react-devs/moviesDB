@@ -37,14 +37,14 @@ class App extends Component {
                 {!isAuthenticated ? (
                   <LandingPage />
                 ) : (
-                  <Home fetchUrl={requests.fetchActionMovies} />
+                  <Home  />
                 )}
               </Route>
             </Switch>
             <Switch>
               <Route exact path="/home">
                 {isAuthenticated && (
-                  <Home fetchUrl={requests.fetchActionMovies} />
+                  <Home />
                 )}
               </Route>
               <Route exact path="/watchlist">

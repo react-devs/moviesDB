@@ -11,9 +11,10 @@
 
 
 
-.suk-sukall-cards-suk{
+.all-cards-suk{
   display: flex;
-	flex-wrap: wrap;
+	justify-content:space-between;
+  flex-wrap: wrap-reverse;
 
 }
 
@@ -73,7 +74,7 @@
 	 border-radius: 4px;
 }
  .suk-text-movie-cont {
-	 padding: 0px 12px;
+	 padding: 25px 12px;
 	 text-align: left;
    
 }
@@ -110,7 +111,7 @@
 /* TYPOGRAPHY STARTS */
 /* Fonts */
  h1, h2, h3, h4, h5 {
-  font-family: serif;
+  font-family: system-ui;
 	 color: #e7e7e7;
 	 margin: 0px;
 }

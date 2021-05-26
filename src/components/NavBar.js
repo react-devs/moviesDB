@@ -11,7 +11,7 @@ class NavBar extends Component {
   render() {
     return (
       <header className="ahheader" >
-        <h2 className="ahlogo" >MoviesDB</h2>
+        <h2 className="ahlogo" >Movies<span style={{color:"#A32B1B"}} >DB</span></h2>
         <nav className="ahnav" >
           <ul className="aanav__link" >
             <li><Link to="/home" ><a href={() => false}>Home</a></Link></li>

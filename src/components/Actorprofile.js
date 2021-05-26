@@ -3,6 +3,7 @@ import axios from '../API/axios'
 import '../style/ActorProfile.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from "./NavBar";
+import Footer from './Footer';
 
 export class ActorsProfile extends Component {
   state = {
@@ -63,6 +64,7 @@ componentDidMount =  async()=>{
             {moviesrelated}
           </div>
         </main>
+        <Footer />
       </div>
     )
   }

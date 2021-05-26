@@ -19,14 +19,14 @@
   font-weight: 500;
   text-decoration: none;
   transition: all 0.7s ease 0s;
-  color: #f6d71d;
+  color: #fff;
   cursor: pointer;
   background-color: #181818;
-  border: solid 1px #fff ;
+  border: solid 1px #A32B1B ;
 }
 .ahInput:hover{
     color: #fff;
-    border: solid 1px #f6d71d ;
+    border: solid 1px #A32B1B ;
 }
 
 .ahNav li a {
@@ -51,7 +51,7 @@
 
     }
     70%{
-        box-shadow: 0 0 0 1px #f6d71d
+        box-shadow: 0 0 0 1px #A32B1B
 
     }
    

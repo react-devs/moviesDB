@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 
 .accordion {
@@ -20,7 +21,7 @@
   width: 180px;
   float: left;
   border-left: 1px solid;
-  box-shadow: 0 0 2px 1px #f6d71d;
+  box-shadow: 0 0 2px 1px #A32B1B;
   transition: all 0.5s;
 }
 
@@ -34,13 +35,17 @@
   display: block;
 }
 
+/* ddddddddddddddddddddddddddd */
+
 .image_title {
-  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.8);
   position: absolute;
   left: 0;
   bottom: 38px;
-  width: 1080px;
-  height: 10%;
+  width: 1000px;
+  height: 100%;
+  transition: ease 0.3s;
 }
 .image_title img {
   width: 100%;
@@ -50,13 +55,75 @@
   left: 0;
 }
 .image_title .ahmadA {
+  margin-top: 10%;
   display: block;
-  text-align: center;
+  text-align: right;
   color: #fff;
   text-decoration: none;
   padding: 10px;
   font-size: 1rem;
 }
+.image_title:hover {
+  opacity: 1;
+}
+
+.hahaha{
+  width: 60%;
+  background-color: transparent;
+}
+
+.AhlogOutHero{
+  background-color: transparent;
+  font-family:'Montserrat', sans-serif;
+  color: #fff;
+  display: block;
+  padding: 9px 25px;
+  margin: 0px 0px 0px 0px;
+  border: 2px solid #A32B1B;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  font-weight: 500;
+  margin-left: 5rem;
+  margin-top: 3rem;
+  letter-spacing: 0px;
+
+}
+.AhlogOutHero:hover{
+  animation: pulse 2s infinite;
+  letter-spacing: 0px;
+  
+}
+.hahaha .ahmadADis{
+  display: block;
+  text-decoration: none;
+  text-align: left;
+  font-size: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #f6d71d;
+  margin-left: 5rem;
+  margin-top: 1rem;
+
+}
+.ahmadADis :hover{
+  cursor: pointer;
+  
+}
+.hahaha .ahmadADis2{
+  display: block;
+  text-decoration: none;
+  text-align: left;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  margin-left: 5rem;
+
+  
+}
+
+
+
+/* dddddddddddddddddd */
 
 @keyframes BobbySnuggles {
   0% {
@@ -67,4 +134,18 @@
     opacity: 1;
     transform: rotate(0deg) scale(1);
   }
+}
+@keyframes pulse{
+  0%{
+      box-shadow: 0 0 0 0 #fff;
+  }
+  35%{
+      box-shadow: 0 0 0 1px #fff
+
+  }
+  70%{
+      box-shadow: 0 0 0 1px #f6d71d
+
+  }
+ 
 }

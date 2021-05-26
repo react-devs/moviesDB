@@ -27,8 +27,13 @@ class HeroBanner extends Component {
         <li key={idx}>
           <div class="image_title">
             <a className="ahmadA" href={() => false}>{movie.original_title}</a>
+            <div className="hahaha" >
+            <a className="ahmadADis" href={() => false}>{movie.original_title}</a>
+            <a className="ahmadADis2" href={() => false}>{movie.overview.split(" ").slice(0,12).join(" ")}...</a>
+            <Link style={{textDecoration:"none"}} to={`movie/${movie.id}`}><button className="AhlogOutHero" >Movie Profile</button></Link>
+            </div>
           </div>
-          <Link to={`movie/${movie.id}`}>
+         
             <a className="ahmadA" href={() => false}>
               <img
                 src={`${baseImgUrl}${movie.backdrop_path}`}
@@ -37,7 +42,7 @@ class HeroBanner extends Component {
                 style={{ height: "33rem" }}
               />
             </a>
-          </Link>
+          
         </li>
       );
     });

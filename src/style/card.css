@@ -47,20 +47,18 @@ h2 strong,
 .vm,
 h2,
 h2 strong,
-h2 span {
-  vertical-align: middle;
-}
-body {
+
+/* body {
   background: #24282f;
   font-family: 'Alegreya Sans';
-}
+} */
 .wrapper {
   padding: 15px;
 }
 h2 {
   padding: 10px;
-  padding-left: 25px;
-  color: red;
+  padding-left: 10px;
+  color: #C63D4E;
   margin: 0;
 }
 h2 strong {
@@ -69,9 +67,9 @@ h2 strong {
   padding: 4px 8px;
 }
 h2 span {
-  font-size: 0.7em;
+  font-size: 2rem;
   color: #aaa;
-  margin-left: 10px;
+  margin-left: 2px;
 }
 .ahH2:after {
   content: '';
@@ -146,6 +144,7 @@ h2 span {
 .cards .card:active figcaption,
 .news .card:active figcaption {
   transform: none;
+  cursor: pointer;
 }
 .cards .card:hover:after,
 .news .card:hover:after,

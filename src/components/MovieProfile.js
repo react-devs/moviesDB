@@ -217,14 +217,7 @@ class MovieProfile extends Component {
 
         <aside className="additional-info">
           <div className="centered-container _dotted">
-            <section className="section movie-similar">
-              <h2 className="section-header ">Similer Movies</h2>
-              <div className="movies-suf">
-                {/* looping array  */}
-                {semiList}
-
-              </div>
-            </section>
+            
 
             <section className="section movie-details">
               <h2 className="section-header">Trailer</h2>
@@ -232,6 +225,15 @@ class MovieProfile extends Component {
                 <iframe width="900" height="500" src={`https://www.youtube.com/embed/${this.state.trailerId}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </div>
 
+            </section>
+
+            <section className="section movie-similar">
+              <h2 className="section-header ">Similer Movies</h2>
+              <div className="movies-suf">
+                {/* looping array  */}
+                {semiList}
+
+              </div>
             </section>
           </div>
         </aside>

@@ -21,7 +21,7 @@ export class LandingPage extends Component {
           </video>
           
           <div className="text">
-            <h2>MovieDB</h2>
+            <h1 style={{fontSize:"6.5rem"}} >Movies<span style={{color:"#A32B1B"}} >DB</span> </h1>
             <h3>The Open Movie Database</h3>
             <p>Welcome to the Movies Database, You will find the most Anticipated New Movies and Shows</p>
             <LoginButton />

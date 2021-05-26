@@ -15,6 +15,8 @@ class App extends Component {
     console.log(requests.fetchTrending);
     const { isAuthenticated, user } = this.props.auth0;
 
+    console.log(user)
+
     const iflogIn = async () => {
       console.log(user);
       const userBody = {

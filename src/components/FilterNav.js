@@ -34,15 +34,15 @@ class FilterNav extends Component {
         category:e.target.value
 
       });
-    } else if (e.target.value === "Documentaries") {
+    } else if (e.target.value === "Animation") {
       await this.setState({
-        fetchUrl: requests.fetchDocumentaries,
+        fetchUrl: requests.fetchAnimationMovies,
         category:e.target.value
 
       });
-    } else if (e.target.value === "TV") {
+    } else if (e.target.value === "Fantacy") {
       await this.setState({
-        fetchUrl: requests.fetchTopTvShows,
+        fetchUrl: requests.fetchFantacyMovies,
         category:e.target.value
       });
     }else if (e.target.value) {
@@ -85,7 +85,7 @@ class FilterNav extends Component {
               <input
                 className="ahInput"
                 type="button"
-                value="Documentaries"
+                value="Animation"
                 onClick={this.handeleClick}
               />
             </li>
@@ -93,7 +93,7 @@ class FilterNav extends Component {
               <input
                 className="ahInput"
                 type="button"
-                value="TV"
+                value="Fantacy"
                 onClick={this.handeleClick}
               />
             </li>
